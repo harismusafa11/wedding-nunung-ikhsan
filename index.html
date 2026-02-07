@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Wedding of Ikhsan & Nunung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Pinyon+Script&family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #F9F7FD;
+            --color-text: #4B3F52;
+            --color-accent: #967BB6;
+            --color-lavender-light: #E6E6FA;
+            --font-main: 'Cormorant Garamond', serif;
+            --font-display: 'Playfair Display', serif;
+            --font-script: 'Great Vibes', cursive;
+            --font-pinyon: 'Pinyon Script', cursive;
+            --font-sans: 'Montserrat', sans-serif;
+            --bg-url: url('https://ml5dafx6yq9i.i.optimole.com/w:auto/h:auto/q:auto/id:e391cbafd7785bc8e124e5239e57ed26/directUpload/image-4.jpg');
+        }
+
+        body {
+            background-color: #F0EDF5;
+            font-family: var(--font-main);
+            color: var(--color-text);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .mobile-frame {
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            position: relative;
+            background-image: var(--bg-url);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            box-shadow: 0 0 50px rgba(75, 0, 130, 0.1);
+        }
+
+        /* Overlay halus agar teks tetap mudah dibaca di atas gambar lavender */
+        .mobile-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(253, 251, 247, 0.15); /* Transparansi overlay */
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .font-script { font-family: var(--font-script); }
+        .font-pinyon { font-family: var(--font-pinyon); }
+        .font-display { font-family: var(--font-display); }
+        .font-sans { font-family: var(--font-sans); }
+        
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+        
+        .nav-fixed {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+            width: max-content;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

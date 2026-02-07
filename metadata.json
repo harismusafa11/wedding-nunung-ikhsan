@@ -1,0 +1,7 @@
+{
+  "name": "Romantic Lavender Wedding Invitation",
+  "description": "A luxury, responsive digital wedding invitation with scroll animations, story timeline, RSVP, and AI-powered personalized greetings.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

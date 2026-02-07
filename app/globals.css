@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #F9F7FD;
+  --color-text: #4B3F52;
+  --color-accent: #967BB6;
+  --color-lavender-light: #E6E6FA;
+  --font-main: 'Cormorant Garamond', serif;
+  --font-display: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-pinyon: 'Pinyon Script', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+  --bg-url: url('https://ml5dafx6yq9i.i.optimole.com/w:auto/h:auto/q:auto/id:e391cbafd7785bc8e124e5239e57ed26/directUpload/image-4.jpg');
+}
+
+body {
+  background-color: #F0EDF5;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.mobile-frame {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  position: relative;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  box-shadow: 0 0 50px rgba(75, 0, 130, 0.1);
+  margin: 0 auto;
+}
+
+.mobile-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(253, 251, 247, 0.15);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-pinyon {
+  font-family: var(--font-pinyon);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.nav-fixed {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: max-content;
+}
+
+@keyframes float-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+/* Luxury Button Styles */
+.btn-luxury {
+  position: relative;
+  background: #5A4A42;
+  color: #E6E2D6;
+  padding: 1.1rem 3.2rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+  font-size: 10px;
+  box-shadow: 0 10px 30px rgba(90, 74, 66, 0.4);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.btn-luxury:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(90, 74, 66, 0.5);
+  background: #4A3A32;
+}
+
+.btn-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #A89F91, #E6E2D6, #A89F91);
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(8px);
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+}
+
+/* Dust Particles */
+.dust-particle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.4;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translate(100px, -100vh);
+    opacity: 0;
+  }
+}
+
+/* Light Leak */
+.light-leak-cover {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(150, 123, 182, 0.1) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: leak-move 15s infinite alternate;
+}
+
+@keyframes leak-move {
+  0% {
+    transform: translate(-10%, -10%) scale(1);
+  }
+
+  100% {
+    transform: translate(10%, 10%) scale(1.1);
+  }
+}
+
+/* Photo Effects */
+@keyframes photo-shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+
+  100% {
+    transform: translateX(150%) skewX(-25deg);
+  }
+}
+
+.photo-shimmer-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: photo-shimmer 4s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes photo-breathe-slow {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-photo-breathe {
+  animation: photo-breathe-slow 10s ease-in-out infinite;
+}
+
+/* RSVP Textures */
+.paper-texture {
+  background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+}
+
+.inner-border-rsvp {
+  position: absolute;
+  inset: 12px;
+  border: 0.5px solid rgba(90, 74, 66, 0.1);
+  pointer-events: none;
+  z-index: 5;
+}
